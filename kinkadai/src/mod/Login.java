@@ -1,23 +1,23 @@
 package mod;
 
-public class User {
+public class Login {
 
-	private int userId;
+	private String userId;
 	private String name;
 	private String pass;
 
-	public User(int userId, String name, String pass) {
-		this.userId = userId;
+	public Login(String name, String pass) {
 		this.name = name;
 		this.pass = pass;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
 	public String getName() {
 		return name;
+	}
+
+
+	public String getUserId() {
+		return userId;
 	}
 
 	public String getPass() {
