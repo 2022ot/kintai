@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import mod.Hantei;
-import mod.Loginlogic;
+import mod.Hanteilogic;
 
 /**
  * Servlet implementation class HanteiServlet
@@ -36,10 +36,14 @@ public class HanteiServlet extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		String userId = request.getParameter("userId");
+		String syussya=request.getParameter("syu");//出勤
+		String kitaku=request.getParameter("ki");//帰宅
+
+//		System.out.println(hantei);
 
 
-		Hantei hantei = new Hantei(userId);
-		Loginlogic bo = new Loginlogic();
+		Hantei hantei = new Hantei(userId,hantei);
+		Hanteilogic bo = new Hanteilogic();
 		boolean result = bo.execute(hantei);
 
 		if(result) {
@@ -49,10 +53,10 @@ public class HanteiServlet extends HttpServlet {
 
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher
-				("/WEB-INF/jsp/login.jsp");
+				("/WEB-INF/jsp/loginOK.jsp");
 		dispatcher.forward(request, response);
 	}else {
-		response.sendRedirect("/kinkadai/LoginServlet");
+		response.sendRedirect("/kinkadai/HanteiServlet");
 	}
   }
 }

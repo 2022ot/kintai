@@ -3,7 +3,7 @@ package mod;
 public class Hantei {
 
 	private String userId;
-	private boolean hantei;
+	private String hantei;
 
 	public String getUserId() {
 		return userId;
@@ -13,11 +13,11 @@ public class Hantei {
 		this.userId = userId;
 	}
 
-	public boolean isHantei() {
+	public String getHantei() {
 		return hantei;
 	}
 
-	public void setHantei(boolean hantei) {
+	public void setHantei(String hantei) {
 		this.hantei = hantei;
 	}
 

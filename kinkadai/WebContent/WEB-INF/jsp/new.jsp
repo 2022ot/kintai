@@ -9,7 +9,6 @@
 <body>
 <ul>
 <li><a href="/kinkadai/LoginServlet">ログイン</a></li>
-<li>登録</li>
 </ul>
 </body>
 </html>

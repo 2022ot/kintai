@@ -6,7 +6,7 @@ public class Hanteilogic {
 	public boolean execute(Hantei hantei) {
 
 		HanteiDAO dao = new HanteiDAO();
-		Hantei hantei = dao.saveToDb(hantei);
+		Hantei hantei1 = dao.saveToDb(hantei1);
 		return null;
 	}
 

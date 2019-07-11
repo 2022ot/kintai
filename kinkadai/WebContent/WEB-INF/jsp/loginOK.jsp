@@ -11,7 +11,8 @@
 	<p>ようこそ<c:out value="${name}" />
 	</p>
 	<form action="/kinkadai/HanteiServlet" method="post">
-		 	出/帰:<input type="text" name="hantei"><br>
+		 	出:<input type="radio" name="syu" value="出社"><br>
+		 	帰:<input type="radio" name="ki" value="帰社"><br>
 			<input type="submit"value="ok">
 			 <a href="/kinkadai/NewAccount">TOP</a>
 	</form>
