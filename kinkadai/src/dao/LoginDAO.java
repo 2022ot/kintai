@@ -34,6 +34,7 @@ public class LoginDAO {
 
 
 				user = new User(userId, name, pass);
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

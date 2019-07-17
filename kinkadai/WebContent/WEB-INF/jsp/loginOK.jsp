@@ -9,12 +9,22 @@
 </head>
 <body>
 	<p>ようこそ<c:out value="${name}" />
+			  <h2 id="time"></h2>
+		      <script>
+    time();
+    function time(){
+        var now = new Date();
+        document.getElementById("time").innerHTML = now.toLocaleString();
+    }
+    setInterval('time()',1000);
+    </script>
 	</p>
 	<form action="/kinkadai/HanteiServlet" method="post">
-		 	出:<input type="radio" name="syu" value="出社"><br>
-		 	帰:<input type="radio" name="ki" value="帰社"><br>
-			<input type="submit"value="ok">
+		 	出:<input type="radio" name="lol" value="syu">
+		 	帰:<input type="radio" name="lol" value="ki"><br>
+			<input type="submit"value="ok"><br>
 			 <a href="/kinkadai/NewAccount">TOP</a>
 	</form>
+
 </body>
 </html>

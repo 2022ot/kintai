@@ -5,14 +5,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import mod.Handan;
 import mod.Hantei;
 
 public class HanteiDAO {
 
-	public boolean saveToDb(Hantei hantei) {
+	public boolean findByLogin(Hantei hantei) throws ClassNotFoundException {
 
 		Connection conn = null;
-		Hantei hantei1 = null;
+		Handan handan = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(
@@ -21,12 +22,12 @@ public class HanteiDAO {
 			String sql = "INSERT INTO TIMEMANAGEMENT(userID,hantei)VALUES(?,?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			pStmt.setString(1, hantei1.getUserId());
-			pStmt.setString(2, hantei1.getHantei());
+			pStmt.setString(1, hantei.getUserId());
+			pStmt.setString(2, hantei.getHantei());
 
-			int result = pStmt.executeUpdate();
+			int result=pStmt.executeUpdate();
 
-			if (result != 1) {
+			if(result !=1){
 				return false;
 			}
 		} catch (SQLException e) {
@@ -41,7 +42,7 @@ public class HanteiDAO {
 				}
 			}
 		}
-		return null;
+		return true;
 	}
 
 }

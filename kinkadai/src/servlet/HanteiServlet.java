@@ -35,9 +35,11 @@ public class HanteiServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
-		String userId = request.getParameter("userId");
+		String userId=request.getParameter("userId");
 		String syussya=request.getParameter("syu");//出勤
 		String kitaku=request.getParameter("ki");//帰宅
+
+
 
 //		System.out.println(hantei);
 

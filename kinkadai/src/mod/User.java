@@ -2,7 +2,7 @@ package mod;
 
 public class User {
 
-	private int userId;
+	public static int userId;
 	private String name;
 	private String pass;
 

@@ -1,14 +1,18 @@
 package mod;
 
-import dao.HanteiDAO;
-
 public class Hanteilogic {
-	public boolean execute(Hantei hantei) {
+	public boolean execute(Hantei hantei) {//booleanからvoidへ変更
 
-		HanteiDAO dao = new HanteiDAO();
-		Hantei hantei1 = dao.saveToDb(hantei1);
-		return null;
+		String syu="syu";
+		String ki="ki";
+
+		if(syu.equals(syu)) {
+
+
+		}
+		/**HanteiDAO dao = new HanteiDAO();
+		Handan handan = dao.saveToDb(handan);
+		return handan!=null;*/
+		return false;
 	}
-
-
 }

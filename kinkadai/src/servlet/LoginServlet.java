@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import mod.Login;
 import mod.Loginlogic;
+import mod.User;
 
 /**
  * Servlet implementation class Login
@@ -48,11 +49,13 @@ public class LoginServlet extends HttpServlet {
 		Loginlogic bo = new Loginlogic();
 		boolean result = bo.execute(login);
 
+
+
+
 		if(result) {
 			HttpSession session=request.getSession();
 			session.setAttribute("name", name);
-
-
+			session.setAttribute("userId",User.userId);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher
 				("/WEB-INF/jsp/loginOK.jsp");
