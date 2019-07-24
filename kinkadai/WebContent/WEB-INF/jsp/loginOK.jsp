@@ -8,8 +8,9 @@
 <title>出社帰宅確定ページ</title>
 </head>
 <body>
-	<p>ようこそ<c:out value="${name}" />
+	<p>ようこそ<c:out value="${name}" /></p>
 			  <h2 id="time"></h2>
+
 <script>
     time();
     function time(){
@@ -18,12 +19,11 @@
     }
     setInterval('time()',1000);
 </script>
-	</p>
 	<form action="/kinkadai/HanteiServlet" method="post">
-		 	出:<input type="radio" name="syu" value="syu">
-		 	帰:<input type="radio" name="ki" value="ki"><br>
+		 	出:<input type="radio" name="hantei" value="syu">
+		 	帰:<input type="radio" name="hantei" value="ki"><br>
 			<input type="submit"value="ok"><br>
-			 <a href="/kinkadai/NewAccount">TOP</a>
+
 	</form>
 
 </body>

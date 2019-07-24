@@ -17,4 +17,8 @@ public class Hantei {
 	public String getHantei() {
 		return hantei;
 	}
+	public void saveToDatabase() {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
 }

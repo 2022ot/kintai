@@ -50,8 +50,6 @@ public class LoginServlet extends HttpServlet {
 		boolean result = bo.execute(login);
 
 
-
-
 		if(result) {
 			HttpSession session=request.getSession();
 			session.setAttribute("name", name);

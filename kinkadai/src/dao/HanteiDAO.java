@@ -5,15 +5,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import mod.Handan;
 import mod.Hantei;
 
 public class HanteiDAO {
 
-	public boolean findByLogin(Hantei hantei) throws ClassNotFoundException {
+	public boolean saveToDatabase(Hantei hantei) throws ClassNotFoundException {
 
 		Connection conn = null;
-		Handan handan = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(
