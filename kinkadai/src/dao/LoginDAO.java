@@ -10,10 +10,10 @@ import mod.Login;
 import mod.User;
 
 public class LoginDAO {
-
 	public User findByLogin(Login login) {
 		Connection conn = null;
 		User user = null;
+
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(
@@ -34,6 +34,7 @@ public class LoginDAO {
 
 
 				user = new User(userId, name, pass);
+
 
 			}
 		} catch (SQLException e) {

@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.LoginDAO;
 import mod.Login;
 import mod.Loginlogic;
-import mod.User;
 
 /**
  * Servlet implementation class Login
@@ -49,14 +49,17 @@ public class LoginServlet extends HttpServlet {
 		Loginlogic bo = new Loginlogic();
 		boolean result = bo.execute(login);
 
+		LoginDAO d = new LoginDAO();
+
+
 
 		if(result) {
 			HttpSession session=request.getSession();
 			session.setAttribute("name", name);
-			session.setAttribute("userId",User.userId);
+			session.setAttribute("userId",d.findByLogin(login).getUserId());
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher
-				("/WEB-INF/jsp/loginOK.jsp");
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginOK.jsp");
 		dispatcher.forward(request, response);
 	}else {
 		response.sendRedirect("/kinkadai/LoginServlet");

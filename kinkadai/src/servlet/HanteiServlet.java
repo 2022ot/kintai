@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.LoginDAO;
 import mod.Hantei;
+import mod.Hanteilogic;
+import mod.Login;
 
 /**
  * Servlet implementation class HanteiServlet
@@ -33,13 +36,21 @@ public class HanteiServlet extends HttpServlet {
 			HttpServletResponse response)
 			throws ServletException, IOException {
 
+		Hanteilogic hanteiLogic = new Hanteilogic();
+
 		request.setCharacterEncoding("UTF-8");
-		String userId = request.getParameter("userId");
+//		int userId = request.getParameter("userId");
 		String hantei = request.getParameter("hantei");
 
+		//userId = userId.IntegerparseInt();
 
-		Hantei hantei1 = new Hantei(userId,hantei);
-		hantei1.saveToDatabase();
+		LoginDAO d = new LoginDAO();
+
+		int userId = d.findByLogin(Login.getInstance()).getUserId();
+
+
+		Hantei hantei1 = new Hantei(userId,hantei, null);
+		hanteiLogic.execute(hantei1);
 
 
 			HttpSession session=request.getSession();
@@ -48,10 +59,8 @@ public class HanteiServlet extends HttpServlet {
 
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher
-				("/WEB-INF/jsp/loginOK.jsp");
+				("/WEB-INF/jsp/LoginResult.jsp");
 		dispatcher.forward(request, response);
-	 {
-		response.sendRedirect("/kinkadai/HanteiServlet");
-	}
+
   }
 }

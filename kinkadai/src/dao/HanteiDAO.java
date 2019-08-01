@@ -9,7 +9,7 @@ import mod.Hantei;
 
 public class HanteiDAO {
 
-	public boolean saveToDatabase(Hantei hantei) throws ClassNotFoundException {
+	public Hantei saveToDatabase(Hantei hantei) throws ClassNotFoundException {
 
 		Connection conn = null;
 		try {
@@ -17,20 +17,21 @@ public class HanteiDAO {
 			conn = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/kintai", "root", "1234");
 
-			String sql = "INSERT INTO TIMEMANAGEMENT(userID,hantei)VALUES(?,?)";
+			String sql = "INSERT INTO TIMEMANAGEMENT(userId,hantei)VALUES(?,?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			pStmt.setString(1, hantei.getUserId());
+			pStmt.setInt(1, hantei.getUserId());
 			pStmt.setString(2, hantei.getHantei());
 
-			int result=pStmt.executeUpdate();
+			System.out.println(hantei.getUserId() + hantei.getHantei());
 
-			if(result !=1){
-				return false;
+			if(pStmt.executeUpdate() != 0) {
+				System.out.println("データベースに保存かんりょおおおお");
 			}
+
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return false;
 		} finally {
 			if (conn != null) {
 				try {
@@ -40,7 +41,6 @@ public class HanteiDAO {
 				}
 			}
 		}
-		return true;
+		return hantei;
 	}
-
 }

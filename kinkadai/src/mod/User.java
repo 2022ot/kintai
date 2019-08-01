@@ -1,8 +1,10 @@
 package mod;
 
-public class User {
+import java.io.Serializable;
 
-	public static int userId;
+public class User implements Serializable{
+
+	private int userId;
 	private String name;
 	private String pass;
 
@@ -25,3 +27,5 @@ public class User {
 	}
 
 }
+
+

@@ -10,7 +10,6 @@
 <body>
 	<p>ようこそ<c:out value="${name}" /></p>
 			  <h2 id="time"></h2>
-
 <script>
     time();
     function time(){
@@ -20,6 +19,7 @@
     setInterval('time()',1000);
 </script>
 	<form action="/kinkadai/HanteiServlet" method="post">
+
 		 	出:<input type="radio" name="hantei" value="syu">
 		 	帰:<input type="radio" name="hantei" value="ki"><br>
 			<input type="submit"value="ok"><br>
