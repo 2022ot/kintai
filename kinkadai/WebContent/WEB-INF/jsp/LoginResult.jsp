@@ -11,6 +11,6 @@
 </head>
 <body>
 <p>保存しました</p>
-<a href="/kinkadai/NewAccount" >TOP</a>
+<a href="/kinkadai/LoginServlet" >TOP</a>
 </body>
 </html>

@@ -39,7 +39,7 @@ public class HanteiServlet extends HttpServlet {
 		Hanteilogic hanteiLogic = new Hanteilogic();
 
 		request.setCharacterEncoding("UTF-8");
-//		int userId = request.getParameter("userId");
+     //	int userId = request.getParameter("userId");
 		String hantei = request.getParameter("hantei");
 
 		//userId = userId.IntegerparseInt();
@@ -64,3 +64,4 @@ public class HanteiServlet extends HttpServlet {
 
   }
 }
+

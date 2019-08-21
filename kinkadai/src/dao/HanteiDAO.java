@@ -23,10 +23,10 @@ public class HanteiDAO {
 			pStmt.setInt(1, hantei.getUserId());
 			pStmt.setString(2, hantei.getHantei());
 
-			System.out.println(hantei.getUserId() + hantei.getHantei());
+			//System.out.println(hantei.getUserId() + hantei.getHantei());
 
 			if(pStmt.executeUpdate() != 0) {
-				System.out.println("データベースに保存かんりょおおおお");
+				//System.out.println("データベースに保存かんりょおおおお");
 			}
 
 

@@ -12,6 +12,8 @@
 		ユーザ名:<input type="text" name="name"><br>
 		ぱすわーど:<input	type="password" name="pass"><br>
 		 <input type="submit" value="ログイン">
+		 <input type="submit" value="新規ユーザー登録">
+		 <input type="submit" value="ユーザー削除">
 		  </form>
 </body>
 </html>

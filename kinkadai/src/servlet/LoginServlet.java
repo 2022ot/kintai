@@ -59,7 +59,8 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("userId",d.findByLogin(login).getUserId());
 
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/loginOK.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher
+				("/WEB-INF/jsp/loginOK.jsp");
 		dispatcher.forward(request, response);
 	}else {
 		response.sendRedirect("/kinkadai/LoginServlet");
