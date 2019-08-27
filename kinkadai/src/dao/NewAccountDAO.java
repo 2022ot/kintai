@@ -5,14 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import mod.Login;
 import mod.User;
 
 public class NewAccountDAO {
-	public User saveToDatabase(Login login) throws ClassNotFoundException  {
+	public User saveToDatabase(User user) throws ClassNotFoundException  {
 
 	Connection conn = null;
-	User user = null;
 
 	try {
 		Class.forName("com.mysql.cj.jdbc.Driver");
@@ -22,8 +20,8 @@ public class NewAccountDAO {
 		String sql = "INSERT INTO KOJIN(name,pass)VALUES(?,?)";
 		PreparedStatement pStmt = conn.prepareStatement(sql);
 
-		pStmt.setString(1, login.getName());
-		pStmt.setString(2, login.getPass());
+		pStmt.setString(1, user.getName());
+		pStmt.setString(2, user.getPass());
 
 		if(pStmt.executeUpdate() != 0) {
 			System.out.println("データベースに保存かんりょおおおお");
@@ -40,6 +38,5 @@ public class NewAccountDAO {
 		}
 	}
 	return user;
-
 	}
 }

@@ -48,10 +48,8 @@ public class HanteiServlet extends HttpServlet {
 
 		int userId = d.findByLogin(Login.getInstance()).getUserId();
 
-
 		Hantei hantei1 = new Hantei(userId,hantei, null);
 		hanteiLogic.execute(hantei1);
-
 
 			HttpSession session=request.getSession();
 			session.setAttribute("userId",userId);
@@ -62,6 +60,6 @@ public class HanteiServlet extends HttpServlet {
 				("/WEB-INF/jsp/LoginResult.jsp");
 		dispatcher.forward(request, response);
 
-  }
+	}
 }
 

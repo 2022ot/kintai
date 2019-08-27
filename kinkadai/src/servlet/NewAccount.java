@@ -10,9 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.LoginDAO;
+import dao.NewAccountDAO;
 import mod.Accountlogic;
-import mod.Login;
 import mod.User;
 
 /**
@@ -40,15 +39,15 @@ public class NewAccount extends HttpServlet {
 			HttpServletResponse response)
 					throws ServletException, IOException {
 
-			Accountlogic accountlogi = new Accountlogic();
+			Accountlogic accountlogic = new Accountlogic();
 
 			request.setCharacterEncoding("UTF-8");
 			String name = request.getParameter("name");
 			String pass = request.getParameter("pass");
 
-			LoginDAO d = new LoginDAO();
+			NewAccountDAO d = new NewAccountDAO();
 
-			int userId = d.findByLogin(Login.getInstance()).getUserId();
+			int userId = d.findByLogin(User.getInstance()).getUserId();
 
 			User user1 = new User(userId,name,pass);
 			Accountlogic.execute(user1);
